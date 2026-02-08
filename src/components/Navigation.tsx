@@ -8,9 +8,9 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Education', href: '#education' },
-    { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -47,10 +47,9 @@ const Navigation = () => {
   };
 
   const downloadResume = () => {
-    // Create a dummy resume download - replace with actual resume file
     const link = document.createElement('a');
-    link.href = '#'; // Replace with actual resume URL
-    link.download = 'Ankit_Kishor_Resume.pdf';
+    link.href = '/resume.pdf';  
+    link.download = 'resume.pdf';
     link.click();
   };
 
@@ -58,6 +57,7 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
           <div className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Ankit Kishor
@@ -122,6 +122,8 @@ const Navigation = () => {
                   {item.name}
                 </button>
               ))}
+
+              {/* Mobile Resume Download */}
               <button
                 onClick={downloadResume}
                 className="w-full mt-4 btn-ghost text-sm flex items-center justify-center gap-2 px-4 py-2"

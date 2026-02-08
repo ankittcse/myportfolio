@@ -6,13 +6,8 @@ const HeroSection = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Ankit_Kishor_Resume.pdf";
-    link.download = "Ankit_Kishor_Resume.pdf";
-    link.click();
-  };
-  
+  // REMOVED: The broken downloadResume function is no longer needed.
+
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -59,7 +54,7 @@ const HeroSection = () => {
           <div className="relative order-1 lg:order-1">
             <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border-4 border-primary/30 backdrop-blur-sm flex items-center justify-center relative overflow-hidden group hover:border-primary/50 transition-all duration-300">
               <img
-                src="/MyPicprofile.JPG"
+                src="/Mypicbyai.PNG"
                 alt="Ankit Kishor"
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
@@ -102,13 +97,17 @@ const HeroSection = () => {
                 <span>View My Work</span>
                 <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
               </button>
-              <button
-                onClick={downloadResume}
+              
+              {/* FIXED: Changed from <button> to <a> and fixed filename */}
+              <a
+                href="/resume.pdf"
+                download="Ankit_Kishor_Resume.pdf"
                 className="btn-ghost group flex items-center gap-3 cursor-pointer"
               >
                 <Download className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>Download Resume</span>
-              </button>
+              </a>
+
             </div>
           </div>
         </div>
@@ -129,7 +128,6 @@ const HeroSection = () => {
       {/* Side decoration */}
       <div className="absolute right-10 top-1/2 transform -translate-y-1/2 hidden lg:block pointer-events-none">
         <div className="glass-card p-8 space-y-4">
-          {/* UPDATED: Added the "float" class for animation */}
           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary animate-glow float" />
           <div
             className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-accent animate-glow float"

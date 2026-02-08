@@ -3,11 +3,12 @@ import { BookOpen, Award, School } from 'lucide-react';
 const EducationSection = () => {
   const educationData = [
     {
-      institution: 'Magadh International School',
-      degree: 'Class 10 (CBSE)',
-      description: 'Strong foundation in science and mathematics',
-      icon: BookOpen,
-      color: 'primary'
+      year: '2023-2027',
+      institution: 'Lovely Professional University',
+      degree: 'B.Tech in Computer Science',
+      description: 'Currently in 3rd Year, focusing on Cloud Computing and AI',
+      icon: School,
+      color: 'accent'
     },
     {
       institution: 'Magadh International School',
@@ -16,15 +17,13 @@ const EducationSection = () => {
       icon: Award,
       color: 'secondary'
     },
-    {
-      year: '2023-2027',
-      institution: 'Lovely Professional University',
-      degree: 'B.Tech in Computer Science',
-      description: 'Currently in 3rd Year, focusing on Cloud Computing and AI',
-      icon: School,
-      color: 'accent'
-    }
-  ];
+     {
+      institution: 'Magadh International School',
+      degree: 'Class 10 (CBSE)',
+      description: 'Strong foundation in science and mathematics',
+      icon: BookOpen,
+      color: 'primary'
+    }  ];
 
   return (
     <section id="education" className="py-20 px-4">
