@@ -8,8 +8,14 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Machine Learning', 'DBMS', 'APIs'],
       icon: Brain,
       gradient: 'from-primary to-secondary',
-      features: ['Real-time processing', 'ML algorithms', 'Database integration']
+      features: ['Real-time processing', 'ML algorithms', 'Database integration'],
+
+      // ⭐ ADDED LINKS
+      code: "https://github.com/ankittcse/loan-ai-homecheck.git",
+      demo: "https://github.com/ankittcse/loan-ai-homecheck.git"
     },
+
+    // ⭐ OTHER PROJECTS unchanged
     {
       title: 'Resume Parsing Agent',
       description: 'FastAPI-powered application with Uvicorn server for multi-resume upload, parsing, and intelligent data extraction.',
@@ -68,16 +74,16 @@ const ProjectsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             const Icon = project.icon;
-            
+
             return (
               <div
                 key={index}
                 className="glass-card-hover p-6 group relative overflow-hidden"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Background gradient effect */}
+                {/* Background gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-                
+
                 {/* Icon */}
                 <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon className="w-8 h-8 text-white" />
@@ -87,7 +93,7 @@ const ProjectsSection = () => {
                 <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   {project.description}
                 </p>
@@ -114,19 +120,34 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Action buttons */}
+                {/* Action Links */}
                 <div className="flex gap-3">
-                  <button className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors">
-                    <Github className="w-4 h-4" />
-                    <span className="text-sm">Code</span>
-                  </button>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-secondary/10 hover:bg-secondary/20 text-secondary rounded-lg transition-colors">
-                    <ExternalLink className="w-4 h-4" />
-                    <span className="text-sm">Demo</span>
-                  </button>
+                  {project.code && (
+                    <a
+                      href={project.code}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-primary/10 hover:bg-primary/20 text-primary rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      <span className="text-sm">Code</span>
+                    </a>
+                  )}
+
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-secondary/10 hover:bg-secondary/20 text-secondary rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span className="text-sm">Demo</span>
+                    </a>
+                  )}
                 </div>
 
-                {/* Hover effect indicator */}
+                {/* Hover Indicator */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 </div>
