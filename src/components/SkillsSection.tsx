@@ -116,7 +116,7 @@ const SkillsSection = () => {
               { skill: 'Python & Java Development', level: 80, color: 'primary' },
               { skill: 'Cloud Computing (AWS/Azure)', level: 85, color: 'secondary' },
               { skill: 'Database Management', level: 80, color: 'accent' },
-              { skill: 'AI/ML Fundamentals', level: 70, color: 'primary' }
+              { skill: 'AI/ML Fundamentals', level: 85, color: 'primary' }
             ].map((item, index) => (
               <div key={index} className="glass-card p-4">
                 <div className="flex justify-between items-center mb-2">
